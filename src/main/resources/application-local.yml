@@ -1,0 +1,41 @@
+spring:
+  devtools:
+    livereload:
+      enabled: true
+
+
+  datasource:
+    url: jdbc:mariadb://127.0.0.1:3306/
+    driver-class-name: org.mariadb.jdbc.Driver
+    username:
+    password:
+
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username:
+    password:
+    properties:
+      mail:
+        smtp:
+          starttls:
+            enable: true
+logging:
+  level:
+    root: debug
+
+
+mybatis:
+  mapper-locations: mybatis/**/*.xml #
+  configuration:
+    map-underscore-to-camel-case: true  # underbar camelCase로 변경해주는 설정
+    log-impl: org.apache.ibatis.logging.commons.JakartaCommonsLoggingImpl # 로그 관련 설정
+
+
